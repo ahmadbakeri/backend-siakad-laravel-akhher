@@ -15,9 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->bigInteger('lecturer_id')->unsigned();
+            $table->string('semester');
+            $table->string('academic_year');
+            $table->integer('credit');
+            $table->string('code');
+            $table->text('description');
             $table->timestamps();
-
-            $table->foreign('lecturer_id','lecturerid_foreign')->references('id')->on('users');
+            $table->foreign('lecturer_id', 'lecturerid_foreign')->references('id')->on('users');
         });
     }
 

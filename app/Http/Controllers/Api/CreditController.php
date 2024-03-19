@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\ScheduleResource;
-use App\Models\Schedule;
+use App\Models\Credit;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class ScheduleController extends Controller
+class CreditController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
-        $user=$request->user();
-        $schedules=Schedule::where('student_id','=',$user->id)->get();
-        return ScheduleResource::collection($schedules->load('subject', 'subject.lecturer', 'student'));
+        $user = $request->user();
+        $credits = Credit::where('student_id', '=', $user->id)->get()->load('subject');;
+        return $credits;
     }
 
     /**

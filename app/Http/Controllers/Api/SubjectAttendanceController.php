@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\ScheduleResource;
-use App\Models\Schedule;
 use Illuminate\Http\Request;
+use App\Models\SubjectAttendance;
+use App\Http\Controllers\Controller;
 
-class ScheduleController extends Controller
+class SubjectAttendanceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
-        $user=$request->user();
-        $schedules=Schedule::where('student_id','=',$user->id)->get();
-        return ScheduleResource::collection($schedules->load('subject', 'subject.lecturer', 'student'));
+        $user = $request->user();
+        $attendances  = SubjectAttendance::where('student_id', '=', $user->id)->paginate(10);
+        return $attendances;
     }
 
     /**
@@ -24,7 +23,17 @@ class ScheduleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'schedule_id'=>'required|exists:schedules,id',
+            'attendance_code'=>'required',
+            'academic_year'=>'required',
+            'semester'=>'required',
+            'meeting'=>'required',
+            'latitude'=>'required',
+            'longitude'=>'required',
+        ]);
+        $attendances = SubjectAttendance::create($request->all());
+        return $attendances;
     }
 
     /**
