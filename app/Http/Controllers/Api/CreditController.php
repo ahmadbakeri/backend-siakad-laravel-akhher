@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Credit;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CreditResource;
 
 class CreditController extends Controller
 {
@@ -15,7 +16,7 @@ class CreditController extends Controller
     {
         $user = $request->user();
         $credits = Credit::where('student_id', '=', $user->id)->get()->load('subject');;
-        return $credits;
+        return CreditResource::collection($credits);
     }
 
     /**
