@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Lesson;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class LessonController extends Controller
@@ -13,12 +14,23 @@ class LessonController extends Controller
      */
     public function index()
     {
-      
-    }
-
-    public function lessons()
-    {
-        $lessons = Lesson::all();
+        $lessons = DB::table('lessons')
+                    ->leftJoin(
+                        'subjects',
+                        'subjects.id',
+                        '=',
+                        'lessons.subject_id'
+                    )
+                    ->select(
+                        'lessons.id',
+                        'lessons.title',
+                        'lessons.subject_id',
+                        'subjects.title as subject_name',
+                    )
+                    ->orderBy('lessons.title', 'asc')
+                    ->take(100)
+                    ->get()
+                    ;
         return response()->json($lessons);
     }
 

@@ -13,6 +13,6 @@ class KhsSeeder extends Seeder
      */
     public function run(): void
     {
-        Khs::factory()->count(150)->create();
+        Khs::factory()->count(30)->create();
     }
 }
