@@ -4,7 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CreditController;
+use App\Http\Controllers\Api\LessonController;
 use App\Http\Controllers\Api\ScheduleController;
+use App\Http\Controllers\Api\SubjectApiController;
 use App\Http\Controllers\Api\SubjectAttendanceController;
 
 /*
@@ -33,3 +35,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('attendances', SubjectAttendanceController::class);
 });
+Route::apiResource('lessons', LessonController::class);
+Route::apiResource('subjects', SubjectApiController::class);
+
