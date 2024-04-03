@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use App\Models\Course;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,6 +21,7 @@ class SubjectFactory extends Factory
         return [
             'title'=>$this->faker->sentence(3),
             'lecturer_id' => User::factory(),
+            'course_id'=>Course::factory(),
             'semester' => 'Ganjil',
             'academic_year' => '2023/2024',
             'credit' => 3,

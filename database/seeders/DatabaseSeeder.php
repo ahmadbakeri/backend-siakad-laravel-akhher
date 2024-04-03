@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\CourseSeeder;
 use Database\Seeders\CreditSeeder;
 use Database\Seeders\SubjectSeeder;
 use Database\Seeders\ScheduleSeeder;
@@ -30,6 +31,7 @@ class DatabaseSeeder extends Seeder
             CreditSeeder::class,
             SubjectAttendanceSeeder::class,
             LessonSeeder::class,
+            CourseSeeder::class,
         ]);
     }
 }

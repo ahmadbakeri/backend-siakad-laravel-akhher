@@ -27,7 +27,7 @@ class LessonController extends Controller
                         'lessons.subject_id',
                         'subjects.title as subject_name',
                     )
-                    ->orderBy('lessons.title', 'asc')
+                    ->orderBy('lessons.id', 'asc')
                     ->take(100)
                     ->get()
                     ;

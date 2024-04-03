@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\Api\CreditController;
 use App\Http\Controllers\Api\LessonController;
 use App\Http\Controllers\Api\ScheduleController;
@@ -37,4 +38,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 Route::apiResource('lessons', LessonController::class);
 Route::apiResource('subjects', SubjectApiController::class);
+Route::apiResource('courses', CourseController::class);
 

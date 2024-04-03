@@ -13,6 +13,6 @@ class CreditSeeder extends Seeder
      */
     public function run(): void
     {
-        Credit::factory()->count(30)->create();
+        Credit::factory()->count(10)->create();
     }
 }
