@@ -17,10 +17,11 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            'image'=>$this->faker->randomElement(['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
             'title'=>$this->faker->sentence(1),
-            'subtitle'=>$this->faker->sentence(1),
-            'time'=>$this->faker->randomElement(['0', '1', '2', '3']),
+            'subtitle'=>$this->faker->sentence(2),
+            'class'=>$this->faker->randomElement(['X', 'XI', 'XII']),
+            'image'=>$this->faker->randomElement(['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
+            'time'=>$this->faker->randomElement(['1', '2', '3']),
         ];
     }
 }

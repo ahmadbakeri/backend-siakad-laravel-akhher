@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->string('image');
             $table->string('title');
             $table->string('subtitle');
+            $table->string('class');
             $table->string('time');
+            $table->string('image');
+            $table->timestamps();
         });
     }
 

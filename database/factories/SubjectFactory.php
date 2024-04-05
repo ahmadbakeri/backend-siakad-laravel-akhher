@@ -19,14 +19,18 @@ class SubjectFactory extends Factory
     public function definition(): array
     {
         return [
-            'title'=>$this->faker->sentence(3),
             'lecturer_id' => User::factory(),
             'course_id'=>Course::factory(),
-            'semester' => 'Ganjil',
-            'academic_year' => '2023/2024',
-            'credit' => 3,
-            'code' => $this->faker->unique()->regexify('[A-Z]{3}[0-9]{3}'),
-            'description' => $this->faker->paragraph(3),
+            'title'=>$this->faker->sentence(1),
+            'subtitle'=>$this->faker->sentence(3),
+            // 'semester' => 'Ganjil',
+            // 'academic_year' => '2023/2024',
+            // 'credit' => 3,
+            // 'code' => $this->faker->unique()->regexify('[A-Z]{3}[0-9]{3}'),
+            'time'=>$this->faker->randomElement(['0', '1', '2', '3']),
+            'field'=>$this->faker->sentence(1),
+            'image'=>$this->faker->randomElement(['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
+            'description' => $this->faker->text(100),
         ];
     }
 }

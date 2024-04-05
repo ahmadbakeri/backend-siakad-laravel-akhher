@@ -16,10 +16,10 @@ return new class extends Migration
             $table->bigInteger('subject_id')->unsigned();
             $table->string('title');
             $table->string('subtitle');
-            $table->string('minutes');
-            $table->string('seconds');
+            $table->string('time');
             $table->text('description');
             $table->string('youtube_link');
+            $table->string('gdrive_link');
             $table->timestamps();
         });
     }

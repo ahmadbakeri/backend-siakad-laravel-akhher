@@ -13,16 +13,20 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->bigInteger('lecturer_id')->unsigned();
             $table->bigInteger('course_id')->unsigned();
-            $table->string('semester');
-            $table->string('academic_year');
-            $table->integer('credit');
-            $table->string('code');
+            $table->string('title');
+            $table->string('subtitle');
+            // $table->string('semester');
+            // $table->string('academic_year');
+            // $table->integer('credit');
+            // $table->string('code');
+            $table->string('time');
+            $table->string('field');
             $table->text('description');
-            $table->timestamps();
+            $table->string('image');
             $table->foreign('lecturer_id', 'lecturerid_foreign')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 

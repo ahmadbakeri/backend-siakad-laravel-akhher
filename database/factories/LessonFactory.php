@@ -21,10 +21,10 @@ class LessonFactory extends Factory
             'subject_id'=>Subject::factory(),
             'title'=>$this->faker->sentence(3),
             'subtitle'=>$this->faker->sentence(5),
-            'minutes'=>$this->faker->randomElement(['0', '1', '2', '3']),
-            'seconds'=>$this->faker->randomElement(['0', '1', '2', '3']),
-            'description'=>$this->faker->paragraph(3),
+            'time'=>$this->faker->randomElement(['0', '1', '2', '3']),
+            'description'=>$this->faker->text(1000),
             'youtube_link'=>$this->faker->randomElement(['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
+            'gdrive_link'=>$this->faker->randomElement(['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
         ];
     }
 }
