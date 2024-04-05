@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use App\Models\Course;
+use App\Models\Toplist;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,8 +20,9 @@ class SubjectFactory extends Factory
     public function definition(): array
     {
         return [
-            'lecturer_id' => User::factory(),
             'course_id'=>Course::factory(),
+            'lecturer_id' => User::factory(),
+            'toplist_id' => Toplist::factory(),
             'title'=>$this->faker->sentence(1),
             'subtitle'=>$this->faker->sentence(3),
             // 'semester' => 'Ganjil',

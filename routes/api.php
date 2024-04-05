@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\Api\CreditController;
 use App\Http\Controllers\Api\LessonController;
+use App\Http\Controllers\Api\ToplistController;
 use App\Http\Controllers\Api\ScheduleController;
 use App\Http\Controllers\Api\SubjectApiController;
 use App\Http\Controllers\Api\SubjectAttendanceController;
@@ -39,4 +40,4 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::apiResource('lessons', LessonController::class);
 Route::apiResource('subjects', SubjectApiController::class);
 Route::apiResource('courses', CourseController::class);
-
+Route::apiResource('toplists', ToplistController::class);

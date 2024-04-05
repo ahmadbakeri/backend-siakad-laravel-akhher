@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('lecturer_id')->unsigned();
             $table->bigInteger('course_id')->unsigned();
+            $table->bigInteger('toplist_id')->unsigned();
+            $table->bigInteger('lecturer_id')->unsigned();
             $table->string('title');
             $table->string('subtitle');
             // $table->string('semester');

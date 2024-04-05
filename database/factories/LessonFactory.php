@@ -22,9 +22,9 @@ class LessonFactory extends Factory
             'title'=>$this->faker->sentence(3),
             'subtitle'=>$this->faker->sentence(5),
             'time'=>$this->faker->randomElement(['0', '1', '2', '3']),
-            'description'=>$this->faker->text(1000),
             'youtube_link'=>$this->faker->randomElement(['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
             'gdrive_link'=>$this->faker->randomElement(['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
+            'description'=>$this->faker->text(3000),
         ];
     }
 }

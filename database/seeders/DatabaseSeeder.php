@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             SubjectAttendanceSeeder::class,
             LessonSeeder::class,
             CourseSeeder::class,
+            ToplistSeeder::class,
         ]);
     }
 }
