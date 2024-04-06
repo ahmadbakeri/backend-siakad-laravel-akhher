@@ -2,24 +2,21 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\ScheduleResource;
-use App\Models\Schedule;
+use App\Models\Grade;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\GradeResource;
 
-class ScheduleController extends Controller
+class GradeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
-        // $user=$request->user();
-        // $schedules=Schedule::where('student_id','=',$user->id)->get();
-        $schedules=Schedule::all();
-        // return ScheduleResource::collection($schedules->load('subject', 'subject.lecturer', 'student'));
-        return ScheduleResource::collection($schedules->load('subject', 'subject.lecturer'));
-
+        $user = $request->user();
+        $grades = Grade::where('student_id', '=', $user->id)->get();
+        return GradeResource::collection( $grades->load('course'));
     }
 
     /**

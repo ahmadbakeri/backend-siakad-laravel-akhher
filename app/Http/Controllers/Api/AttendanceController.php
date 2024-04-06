@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Credit;
+use App\Models\Attendance;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CreditResource;
+use App\Http\Resources\AttendanceResource;
 
-class CreditController extends Controller
+class AttendanceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class CreditController extends Controller
     public function index(Request $request)
     {
         $user = $request->user();
-        $credits = Credit::where('student_id', '=', $user->id)->get()->load('subject');;
-        return CreditResource::collection($credits);
+        $attendances = Attendance::where('student_id' ,'=', $user->id)->get();
+        return AttendanceResource::collection($attendances->load('schedule', 'schedule.subject', ));
     }
 
     /**

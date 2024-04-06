@@ -3,11 +3,13 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\GradeController;
 use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\Api\CreditController;
 use App\Http\Controllers\Api\LessonController;
 use App\Http\Controllers\Api\ToplistController;
 use App\Http\Controllers\Api\ScheduleController;
+use App\Http\Controllers\Api\AttendanceController;
 use App\Http\Controllers\Api\SubjectApiController;
 use App\Http\Controllers\Api\SubjectAttendanceController;
 
@@ -31,13 +33,13 @@ Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth:sanctum');
 Route::apiResource('schedules', ScheduleController::class)
     ->middleware('auth:sanctum');
-Route::middleware(['auth:sanctum'])->group(function () {
-    Route::apiResource('credits', CreditController::class);
-});
-Route::middleware(['auth:sanctum'])->group(function () {
-    Route::apiResource('attendances', SubjectAttendanceController::class);
-});
 Route::apiResource('lessons', LessonController::class);
 Route::apiResource('subjects', SubjectApiController::class);
 Route::apiResource('courses', CourseController::class);
 Route::apiResource('toplists', ToplistController::class);
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::apiResource('grades', GradeController::class);
+});
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::apiResource('attendances', AttendanceController::class);
+});

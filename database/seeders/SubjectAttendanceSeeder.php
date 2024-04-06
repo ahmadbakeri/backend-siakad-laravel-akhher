@@ -13,6 +13,6 @@ class SubjectAttendanceSeeder extends Seeder
      */
     public function run(): void
     {
-        SubjectAttendance::factory(10)->create();
+        SubjectAttendance::factory(1)->create();
     }
 }

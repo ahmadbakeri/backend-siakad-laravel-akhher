@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Credit;
+use App\Models\Grade;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class CreditSeeder extends Seeder
+class GradeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Credit::factory()->count(10)->create();
+        Grade::factory(1)->create();
     }
 }

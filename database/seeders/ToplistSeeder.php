@@ -12,6 +12,6 @@ class ToplistSeeder extends Seeder
      */
     public function run(): void
     {
-        Toplist::factory(5)->create();
+        Toplist::factory(1)->create();
     }
 }

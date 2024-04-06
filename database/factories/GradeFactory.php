@@ -3,13 +3,14 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use App\Models\Course;
 use App\Models\Subject;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Credit>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Grade>
  */
-class CreditFactory extends Factory
+class GradeFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,7 +20,7 @@ class CreditFactory extends Factory
     public function definition(): array
     {
         return [
-            'subject_id' => Subject::factory(),
+            'course_id' => Course::factory(),
             'student_id' => User::factory(),
             'score' => $this->faker->randomElement(['0', '1', '2', '3', '4']),
             'grade' => $this->faker->randomElement(['A', 'B', 'C', 'D', 'E']),
