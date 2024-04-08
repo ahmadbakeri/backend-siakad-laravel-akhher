@@ -31,7 +31,7 @@ class SubjectFactory extends Factory
             // 'code' => $this->faker->unique()->regexify('[A-Z]{3}[0-9]{3}'),
             'time'=>$this->faker->randomElement(['0', '1', '2', '3']),
             'field'=>$this->faker->sentence(1),
-            'image'=>$this->faker->randomElement(['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
+            'image'=>'https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg',
             'description' => $this->faker->text(100),
         ];
     }

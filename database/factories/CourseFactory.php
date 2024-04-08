@@ -20,7 +20,7 @@ class CourseFactory extends Factory
             'title'=>$this->faker->sentence(1),
             'subtitle'=>$this->faker->sentence(2),
             'class'=>$this->faker->randomElement(['X', 'XI', 'XII']),
-            'image'=>$this->faker->randomElement(['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
+            'image'=>'https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg',
             'time'=>$this->faker->randomElement(['1', '2', '3']),
         ];
     }

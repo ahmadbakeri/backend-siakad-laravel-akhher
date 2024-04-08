@@ -24,8 +24,8 @@ return new class extends Migration
             // $table->string('code');
             $table->string('time');
             $table->string('field');
-            $table->text('description');
             $table->string('image');
+            $table->text('description');
             $table->foreign('lecturer_id', 'lecturerid_foreign')->references('id')->on('users');
             $table->timestamps();
         });

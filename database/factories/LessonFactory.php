@@ -22,8 +22,8 @@ class LessonFactory extends Factory
             'title'=>$this->faker->sentence(3),
             'subtitle'=>$this->faker->sentence(5),
             'time'=>$this->faker->randomElement(['0', '1', '2', '3']),
-            'youtube_link'=>$this->faker->randomElement(['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
-            'gdrive_link'=>$this->faker->randomElement(['A1', 'A2', 'A3', 'A4', 'A5', 'A6']),
+            'youtube_link'=>'D0UnqGm_miA',
+            'gdrive_link'=>'https://drive.google.com/file/d/1RtfnfBXd5IMwusHgXN4XBkTeQ4bjSKJW/view?usp=sharing',
             'description'=>$this->faker->text(3000),
         ];
     }
